@@ -23,7 +23,14 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
-    children: [{ path: "", component: () => import("pages/IndexPage.vue") }],
+    children: [
+      { path: "", component: () => import("pages/IndexPage.vue") },
+      {
+        path: "/faculty/profile",
+        name: "Profile",
+        component: () => import("pages/faculty/ProfilePage.vue"),
+      },
+    ],
   },
 
   // Always leave this as last one,

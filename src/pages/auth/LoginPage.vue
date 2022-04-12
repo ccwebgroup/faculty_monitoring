@@ -41,7 +41,14 @@
   </q-page>
 </template>
 <script setup>
+// Main imports
 import { reactive, ref } from "vue";
+//Components imports
+//Composables imports
+//Stores imports
+import { useAuthStore } from "src/stores/auth";
+// Define Stores, Composables
+const authStore = useAuthStore();
 
 const isPwd = ref(true);
 const user = reactive({
@@ -49,5 +56,5 @@ const user = reactive({
   password: "",
 });
 
-const login = () => {};
+const login = () => authStore.logInUser(user);
 </script>
