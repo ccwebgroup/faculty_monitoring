@@ -12,6 +12,7 @@ export const useAuthStore = defineStore("auth", {
           payload.email,
           payload.password
         );
+
         if (this.$route.query.redirect) {
           this.router.push(this.$route.query.redirect);
         } else {
@@ -30,5 +31,14 @@ export const useAuthStore = defineStore("auth", {
       await auth.signOut();
       this.router.replace("/auth/login");
     },
+
+    // async handleAuthState() {
+    //   fireauth.onAuthStateChanged(auth, (user) => {
+    //     if (user) {
+    //       this.authUser = user;
+    //     } else {
+    //     }
+    //   });
+    // },
   },
 });
